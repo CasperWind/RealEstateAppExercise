@@ -33,6 +33,18 @@
                         </Label.FormattedText>
                     </Label>
                     <Entry FontSize="Medium" Text="{Binding Property.Address}" />
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label FontSize="Medium" FontFamily="FA-solid">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Property.Latitude}"/>
+                                    <Span Text=" "/>
+                                    <Span Text="{Binding Property.Longitude}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Button x:Name="geoButton" Text="{Static fa:IconFont.MapPin}" TextColor="Black" Clicked="geoButton_Clicked"/>
+                    </StackLayout>
 
                     <Label FontSize="Medium" FontFamily="FA-solid">
                         <Label.FormattedText>
@@ -90,7 +102,7 @@
                         Keyboard="Numeric"
                         ReturnType="Next"
                         Text="{Binding Property.Parking, Converter={converters:NullableIntConverter}}" />
-                    
+
                     <Label FontSize="Medium" FontFamily="FA-solid">
                         <Label.FormattedText>
                             <FormattedString>
@@ -107,7 +119,7 @@
                         Keyboard="Numeric"
                         ReturnType="Next"
                         Text="{Binding Property.LandSize, Converter={converters:NullableIntConverter}}" />
-                    
+
                     <Label FontSize="Medium" FontFamily="FA-solid">
                         <Label.FormattedText>
                             <FormattedString>
